@@ -1,3 +1,3 @@
 # Lab 2 - Starter
 
-Github Pages: https://aidanfuller9.github.io/cse110_lab2/
+Github Pages: https://aidanfuller9.github.io/sp26-cse110-lab3/
