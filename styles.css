@@ -1,0 +1,203 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
+
+
+body {
+  background-color: lightblue;
+  
+  color: var(--primary, var(--secondary, red));
+}
+
+
+h1 {
+  color: #156340;
+  margin-left: 15px;
+  font-size: 2em;               /* relative to parent font size */
+  margin-bottom: 5mm;        /* relative to root font size */
+  word-spacing: 5pt;            /* absolute */
+  letter-spacing: 1pt;
+  display: block;
+}
+
+h2 {
+    color: rgb(45, 45, 155);
+    margin-left: 15px;
+}
+
+h3 {
+    color: hsl(200, 80%, 30%)
+}
+
+p {
+    color: color(display-p3 0.9 0.5 0.1);
+    font-size: 1.1rem;            /* relative to root font size */
+    width: 80vw;                  /* relative to viewport width (browser width) */
+    line-height: 1.5em;           /* relative to parent font size */
+}
+
+
+li {
+    color: color-mix(in srgb, red, blue);   /* Color Mix */
+    margin: 10px 10px 10px 5px;                /* Margin Shorthand */
+    text-decoration: underline purple 2px;
+    text-align: left;
+    position: relative;
+}      
+
+/* Container styling for box model practice */
+fieldset {
+    /* Margin Longhand */
+    margin-top: 20px;
+    margin-right: 30px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+
+    /* Padding Longhand */
+    padding-top: 0.3in;
+    padding-right: 0.4in;
+    padding-bottom: 0.3in;
+    padding-left: 0.4in;
+
+    /* Border Longhand */
+    border-style: solid;
+    border-width: 3px;
+    border-color: #333;
+
+    /* Border radius */
+    border-radius: 10px;
+
+    /* Optional: for visibility */
+    background-color: #f5f5f5;
+    width: 300px;
+
+    display: inline;
+}
+
+img {
+    /* Auto margin (centers horizontally) */
+    margin-left: auto;
+    margin-right: auto;
+
+     /* Border Shorthand */
+    border: 2px solid #000;
+
+    height: 40mm;
+    width: 45mm;
+    position: sticky;
+
+}
+
+div {
+    /* remove conflicting widths */
+    max-width: 170px; /* or whatever fits your images */
+    /* or just delete both width rules entirely */
+
+    padding: 10px; /* use px instead of mm */
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* THIS is what you want instead of margin:auto */
+}
+
+.container > div {
+    margin: 0; /* reset this */
+}
+
+#pet-select {
+  background-color: lightyellow;
+}
+
+input[type="text"] {
+  border: 2px dashed blue;
+}
+
+h1, h2, h3 {
+  text-align: center;
+}
+
+/* Descendant */
+fieldset label {
+  font-weight: bold;
+}
+
+/* Child */
+ul > li {
+  list-style-type: square;
+}
+
+/* Adjacent sibling */
+h3 + p {
+  background-color: #eef;
+}
+
+/* General sibling */
+h3 ~ ul {
+  border: 1px solid gray;
+}
+
+/* Combining selectors */
+li.special {
+  color: green;
+}
+
+button:hover {
+  background-color: green;
+  color: white;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+span {
+  display: inline-block;
+  width: 100px;
+  height: 20px;
+  background-color: coral;
+}
+
+section {
+  display: none;
+}
+
+fieldset:has(input[type="checkbox"]:checked) {
+  background-color: #d4ffd4;
+}
+
+
+@media (max-width: 768px) {
+  body {
+    background-color: lightpink;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  img {
+    width: 80%;
+    height: auto;
+  }
+
+  p {
+    width: 95vw;
+  }
+}
+
+.container {
+  & img {
+    border-radius: 8px;
+  }
+
+  & img:hover {
+    transform: scale(1.1);
+  }
+}
